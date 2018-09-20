@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">¿Es WIFI_ETECSA?</string>
+    <string name="Warning">Warning</string>
+    <string name="cant_verify_ssl">Can\'t verify if network has a valid ssl certificate</string>
+    <string name="not_valid_ssl">The SSL certificate for WIFI_ETECSA is not valid</string>
+    <string name="ssl_warning">Not Valid Certificate</string>
+    <string name="cant_verify_ssl_warning">Cant verify Certificate</string>
+    <string name="not_official_ap_warning">Not Official AP</string>
+    <string name="not_connected_official_ap">You may be not connected to a WIFI_ETECSA official access point</string>
+</resources>

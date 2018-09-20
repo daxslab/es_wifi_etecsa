@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">¿Es WIFI_ETECSA?</string>
+    <string name="Warning">Advertencia</string>
+    <string name="cant_verify_ssl">No se puede verificar si existe un certificado SSL válido</string>
+    <string name="cant_verify_ssl_warning">No se puede verificar el certificado</string>
+    <string name="not_connected_official_ap">Es posible que no esté conectado a un AP oficial de ETECSA</string>
+    <string name="not_official_ap_warning">AP no oficial</string>
+    <string name="not_valid_ssl">El certificado SSL del portal no es válido</string>
+    <string name="ssl_warning">Certificado no válido</string>
+</resources>
