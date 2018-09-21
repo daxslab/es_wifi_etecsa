@@ -22,7 +22,7 @@ public class WifiReceiver extends BroadcastReceiver {
 
         NetworkInfo info = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
         if(info != null && info.isConnected() ) {
-            new CheckWifi(context).execute(new String[]{"https://test.nauta.cu/"});
+            new CheckWifi(context).execute(new String[]{"https://secure.etecsa.net:8443/"});
         }
     }
 
