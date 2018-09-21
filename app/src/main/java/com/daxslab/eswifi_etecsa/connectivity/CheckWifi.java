@@ -50,11 +50,9 @@ class CheckWifi extends AsyncTask<String, Void, Boolean> {
             try {
                 isConnectionOk = checkConnection(params[0]);
             }catch (SSLHandshakeException ex){
-                Log.e("akakak", "doInBackground: cert error");
                 createNotification(WifiReceiver.SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.ssl_warning), mContext.getString(R.string.not_valid_ssl));
                 this.isWifiOk = false;
             }catch (Exception ex){
-                Log.e("akakak", "doInBackground: connect error");
                 createNotification(WifiReceiver.CANT_VERIFY_SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.cant_verify_ssl_warning), mContext.getString(R.string.cant_verify_ssl));
                 this.isWifiOk = false;
             }
