@@ -9,6 +9,13 @@ import android.support.v4.app.NotificationCompat;
 public class NotificationUtils {
 
 
+    /**
+     * Launch an Android notification
+     * @param mContext {@link Context} for launching notification
+     * @param notificationId
+     * @param contentTitle Notification title
+     * @param contentText Notification id
+     */
     public static void createNotification(Context mContext, int notificationId, String contentTitle, String contentText) {
 
 

@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 import javax.net.ssl.SSLHandshakeException;
 
 /**
- * Created by cccaballero on 20/09/18.
+ * Background task for checking nauta captive portal address and certificate.
  */
 class CheckPortal extends AsyncTask<String, Void, Boolean> {
 
@@ -31,6 +31,11 @@ class CheckPortal extends AsyncTask<String, Void, Boolean> {
 
     }
 
+    /**
+     * Background task for checking nauta captive portal address and certificate.
+     * @param params array of Strings with an url in position 0
+     * @return true if connection was successful
+     */
     protected Boolean doInBackground(String... params) {
 
         String ssid = WifiUtils.getCurrentSSID(mContext);
@@ -52,6 +57,12 @@ class CheckPortal extends AsyncTask<String, Void, Boolean> {
         return null;
     }
 
+    /**
+     * @param checkUrl
+     * @return true if connection was successful
+     * @throws InterruptedException
+     * @throws IOException
+     */
     private boolean checkConnection(String checkUrl) throws InterruptedException, IOException {
         HttpURLConnection response = null;
             TimeUnit.SECONDS.sleep(3);
@@ -63,6 +74,10 @@ class CheckPortal extends AsyncTask<String, Void, Boolean> {
             return true;
     }
 
+    /**
+     * @param response
+     * @throws IOException
+     */
     private void checkResponse(HttpURLConnection response) throws IOException {
         int statusCode = response.getResponseCode();
         if (HttpURLConnection.HTTP_OK != statusCode) {
