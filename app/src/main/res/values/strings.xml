@@ -7,4 +7,6 @@
     <string name="cant_verify_ssl_warning">Cant verify Certificate</string>
     <string name="not_official_ap_warning">Not Official AP</string>
     <string name="not_connected_official_ap">You may be not connected to a WIFI_ETECSA official access point</string>
+    <string name="similar_wifi_name_warning">Similar wifi name</string>
+    <string name="similar_wifi_name">You are not connected to WIFI_ETECSA, but to an AP with a very similar name</string>
 </resources>

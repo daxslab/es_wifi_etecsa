@@ -8,4 +8,6 @@
     <string name="not_official_ap_warning">AP no oficial</string>
     <string name="not_valid_ssl">El certificado SSL del portal no es válido</string>
     <string name="ssl_warning">Certificado no válido</string>
+    <string name="similar_wifi_name_warning">Nombre de Wifi similar</string>
+    <string name="similar_wifi_name">Usted no está conectado a WIFI_ETECSA, sino a un AP con un nombre muy similar</string>
 </resources>

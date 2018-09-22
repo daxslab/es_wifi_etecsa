@@ -22,7 +22,10 @@ public class WifiUtils {
     public static String getCurrentSSID(Context context){
         WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-        return wifiInfo.getSSID();
+        String ssid = wifiInfo.getSSID();
+        ssid = ssid.startsWith("\"") ? ssid.substring(1) : ssid;
+        ssid = ssid.endsWith("\"") ? ssid.substring(0, ssid.length()-1) : ssid;
+        return ssid;
     }
 
 }
