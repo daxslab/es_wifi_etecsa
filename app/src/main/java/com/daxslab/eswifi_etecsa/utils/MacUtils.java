@@ -24,10 +24,10 @@ public class MacUtils {
      * @return true if macAddress belongs to Huawei range
      */
     public static boolean isHuaweiAddress(String macAddress){
-        if(Arrays.asList(HUAWEI_RANGES).contains(getMacInitials(macAddress))){
+        if(Arrays.asList(HUAWEI_RANGES).contains(getMacInitials(macAddress).toUpperCase())){
             return true;
-        }
-        return false;
+        }  return false;
     }
 
 }
+
