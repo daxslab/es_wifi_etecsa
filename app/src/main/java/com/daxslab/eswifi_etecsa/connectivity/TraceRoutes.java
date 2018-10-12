@@ -18,7 +18,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Background task for checking nauta captive portal address and certificate.
+ * Background task for checking unexpected packages jumps using traceroute.
  */
 class TraceRoutes extends AsyncTask<String, Void, Void> {
 
@@ -31,9 +31,9 @@ class TraceRoutes extends AsyncTask<String, Void, Void> {
     }
 
     /**
-     * Background task for checking nauta captive portal address and certificate.
+     * Background task for checking unexpected packages jumps using traceroute.
      * @param params array of Strings with an url in position 0
-     * @return true if connection was successful
+     * @return null
      */
     protected Void doInBackground(String... params) {
 
