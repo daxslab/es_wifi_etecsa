@@ -37,10 +37,10 @@ class CheckPortal extends AsyncTask<String, Void, Boolean> {
         try {
             isConnectionOk = checkConnection(params[0]);
         }catch (SSLHandshakeException ex){
-            NotificationUtils.createNotification(mContext, WifiReceiver.SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.ssl_warning), mContext.getString(R.string.not_valid_ssl));
+            NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiver.SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.ssl_warning), mContext.getString(R.string.not_valid_ssl));
             this.isWifiOk = false;
         }catch (Exception ex){
-            NotificationUtils.createNotification(mContext, WifiReceiver.CANT_VERIFY_SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.cant_verify_ssl_warning), mContext.getString(R.string.cant_verify_ssl));
+            NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiver.CANT_VERIFY_SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.cant_verify_ssl_warning), mContext.getString(R.string.cant_verify_ssl));
             this.isWifiOk = false;
         }
 

@@ -75,7 +75,8 @@ public class WifiReceiver extends BroadcastReceiver {
         JaroWinkler jw = new JaroWinkler();
 
         if (!isWifiEtecsaSSID(context) && jw.similarity(ssid, origin) >= 0.88){
-            NotificationUtils.createNotification(context, WifiReceiver.SIMILAR_WIFI_NAME_WARNING_NOTIFICATION_ID, context.getString(R.string.similar_wifi_name_warning), context.getString(R.string.similar_wifi_name));
+            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiReceiver.SIMILAR_WIFI_NAME_WARNING_NOTIFICATION_ID, context.getString(R.string.similar_wifi_name_warning), context.getString(R.string.similar_wifi_name));
+
         }
     }
 
@@ -86,7 +87,7 @@ public class WifiReceiver extends BroadcastReceiver {
      */
     public void checkApAddress(Context context) {
         if (!MacUtils.isHuaweiAddress(WifiUtils.getCurrentBSSID(context))) {
-            NotificationUtils.createNotification(context, WifiReceiver.NO_OFFICIAL_AP_WARNING_NOTIFICATION_ID, context.getString(R.string.not_official_ap_warning), context.getString(R.string.not_connected_official_ap));
+            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiReceiver.NO_OFFICIAL_AP_WARNING_NOTIFICATION_ID, context.getString(R.string.not_official_ap_warning), context.getString(R.string.not_connected_official_ap));
         }
     }
 
