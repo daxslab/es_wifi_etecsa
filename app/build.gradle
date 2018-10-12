@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '27.0.1'
     defaultConfig {
         applicationId "com.daxslab.eswifi_etecsa"
         minSdkVersion 21
@@ -30,4 +30,5 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     //testCompile 'junit:junit:4.12'
     compile 'info.debatty:java-string-similarity:1.1.0'
+    compile 'com.qiniu:android-netdiag:0.1.1'
 }

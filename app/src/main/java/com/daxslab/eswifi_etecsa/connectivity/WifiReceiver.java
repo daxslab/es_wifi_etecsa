@@ -10,7 +10,11 @@ import com.daxslab.eswifi_etecsa.utils.NotificationUtils;
 import com.daxslab.eswifi_etecsa.utils.StringTrimmer;
 import com.daxslab.eswifi_etecsa.utils.WifiUtils;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+
 
 import info.debatty.java.stringsimilarity.JaroWinkler;
 
@@ -24,14 +28,23 @@ public class WifiReceiver extends BroadcastReceiver {
     public static final int CANT_VERIFY_SSL_WARNING_NOTIFICATION_ID = 00112;
     public static final int NO_OFFICIAL_AP_WARNING_NOTIFICATION_ID = 00113;
     public static final int SIMILAR_WIFI_NAME_WARNING_NOTIFICATION_ID = 00114;
-    public static String WIFI_ETECSA_SSID = "WIFI_ETECSA";
+    public static final int TRACEROUTE_WARNING_NOTIFICATION_ID = 00115;
+    public static final String WIFI_ETECSA_SSID = "WIFI_ETECSA";
+    public static final String CAPTIVE_PORTAL_ADDRESS = "secure.etecsa.net";
+    public static final String CAPTIVE_PORTAL_URL = "https://"+CAPTIVE_PORTAL_ADDRESS+":8443/";
 
     @Override
     public void onReceive(Context context, Intent intent) {
         if (WifiUtils.isReceiverWifiConnected(intent)) {
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             checkSimilarWifiName(context);
             if (isWifiEtecsaSSID(context)) {
-                new CheckPortal(context).execute(new String[]{"https://secure.etecsa.net:8443/"});
+                new TraceRoutes(context).execute();
+                new CheckPortal(context).execute(new String[]{CAPTIVE_PORTAL_URL});
                 this.checkApAddress(context);
             }
         }

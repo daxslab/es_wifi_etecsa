@@ -10,4 +10,9 @@
     <string name="ssl_warning">Certificado no válido</string>
     <string name="similar_wifi_name_warning">Nombre de Wifi similar</string>
     <string name="similar_wifi_name">Usted no está conectado a WIFI_ETECSA, sino a un AP con un nombre muy similar</string>
+    <string name="traceroute_warning">Advertencia en el traceo de rutas</string>
+    <plurals name="unexpexted_route_jumps">
+        <item quantity="one">Se ha encontrado %d salto inesperado en la ruta</item>
+        <item quantity="other">Se han encontrado %d saltos inesperados en la ruta</item>
+    </plurals>
 </resources>
