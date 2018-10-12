@@ -17,7 +17,9 @@ public class NotificationUtils {
     /**
      * Launch an Android notification
      * @param mContext {@link Context} for launching notification
-     * @param notificationId
+     * @param channelId Notification Channel ID
+     * @param channelTitle Notification Channel title
+     * @param notificationId Notification ID
      * @param contentTitle Notification title
      * @param contentText Notification id
      */
