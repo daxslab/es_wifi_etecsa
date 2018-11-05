@@ -46,3 +46,8 @@ header.jumbotron h1 img{
 #footer .list-inline > li > a{
     font-size: 1.25em !important;
 }
+
+.navbar-nav .navbar-link {
+    margin-right: 10px;
+    margin-left: 10px;
+}

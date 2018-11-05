@@ -2,6 +2,7 @@ package com.daxslab.eswifi_etecsa;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,7 +15,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         webview = (WebView) findViewById(R.id.webview);
-        webview.loadUrl("file:///android_asset/web/html/index.html");
+
+        // For allowing Javascript
+        WebSettings settings = webview.getSettings();
+        settings.setDomStorageEnabled(true);
+        settings.setJavaScriptEnabled(true);
+
+        webview.loadUrl("file:///android_asset/web/index.html");
 
     }
 
