@@ -60,9 +60,10 @@ public class WifiReceiver extends BroadcastReceiver {
     }
 
     /**
-     * Check if current wifi connection has a WIFI_ETECSA similar SSID and launch a system
-     * notification if positive.
+     * Check if current wifi connection has a SSID similar to "WIFI_ETECSA" using the Jaro-Winkler
+     * distance algorithm, and launch a system notification in case it does.
      * @param context
+     * @see <a href="https://en.wikipedia.org/wiki/Jaro–Winkler_distance" target="_top">Jaro–Winkler_distance</a>
      */
     public void checkSimilarWifiName(Context context) {
         String ssid = WifiUtils.getCurrentSSID(context);
