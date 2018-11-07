@@ -125,6 +125,11 @@
 
         });
 
+        if(document.location.hash !== ''){
+            let selector = 'a[href={href}]'.replace('{href}', document.location.hash);
+            $(selector).click();
+        }
+
     });
 </script>
 
