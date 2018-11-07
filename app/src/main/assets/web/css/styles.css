@@ -1,53 +1,14 @@
-@font-face {
-    font-family: 'Helvetica';
-    src: url('../fonts/HelveticaNeueLTStd-UltLt.otf');
-    font-weight: normal;
-}
-
 body{
     font-size: 16px;
-    font-family: sans-serif;
     font-weight: normal;
-    padding-top: 0px;
     padding-bottom: 62px;
     background: #fffff;
 }
 
 header.jumbotron{
-    padding: 0;
-    background: transparent;
+    margin-bottom: 1em;
 }
 
-header.jumbotron h1{
-    margin: 0;
-    padding: 0;
-}
-
-header.jumbotron h1 img{
-    width: 100%;
-}
-
-.panel-default > .panel-heading > h2.panel-title{
-    margin: 0;
-    text-transform: uppercase;
-}
-
-
-#footer{
-    text-transform: uppercase;
-    padding-bottom: 1em;
-}
-
-#footer p{
-    font-size: .8em;
-    margin: 0;
-}
-
-#footer .list-inline > li > a{
-    font-size: 1.25em !important;
-}
-
-.navbar-nav .navbar-link {
-    margin-right: 10px;
-    margin-left: 10px;
+.navbar-link{
+    margin: 0 .25em;
 }

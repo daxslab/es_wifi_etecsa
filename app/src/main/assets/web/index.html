@@ -3,157 +3,166 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>¿Es WIFI ETECSA?</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css"/>
+    <title>¿Es WIFI_ETECSA?</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container pt-4">
 
-    <h2>Acerca de</h2>
+    <header class="border-bottom pb-1 mb-4">
+        <p class="lead">Le ayudamos a proteger el saldo de su cuenta Nauta con advertencias ante redes WIFI_ETECSA no oficiales y que pueden ser peligrosas.</p>
+    </header>
 
-    <p class='lead'>
-        Esta aplicación es creada por y para la comunidad de Android de Cuba con el objetivo de
-        evitar que los usuarios de las WIFI_ETECSA caigan en manos de entes inescrupulosos.
-        Esta aplicación lanzara advertencias cuando el usuario intente conectarse a una red
-        WIFI_ETECSA que podría ser insegura.
-    </p>
-
-    <p class='lead'>
-        Esta aplicación es de código abierto y está construida con el objetivo de que todos los
-        usuarios de la red WIFI_ETECSA podamos <a href="https://github.com/daxslab/es_wifi_etecsa">
-        contribuir</a> para conectarnos a la red de la forma mas segura posible.
-    </p>
+    <div class="alert alert-danger">
+        <h2 class="h4 alert-heading"><i class="fa fa-fw fa-exclamation-triangle"></i> ¡Importante!</h2>
+        <p>¿Es WIFI_ETECSA? está en proceso de desarrollo por lo que:</p>
+        <ul>
+            <li>No se garantiza su funcionamiento correcto.</li>
+            <li>Se distribuye en busca de comentarios y sugerencias que ayuden a mejorarla.</li>
+        </ul>
+        <p><strong>Desinstálela inmediatamente</strong> si no se siente cómodo con esta situación.</p>
+    </div>
 
     <h2>¿Cómo usar?</h2>
 
-    <p class='lead'>
-        No tiene que hacer nada!! Una vez instalada, esta aplicación realizará las comprobaciones
-        automáticamente cuando su dispositivo se conecte a WIFI_ETECSA y lanzará advertencias si
-        encuentra algún problema.
+    <p>
+        <strong>¡Usted no necesita hacer nada!</strong> Una vez instalada, esta aplicación realizará las comprobaciones
+        automáticamente cuando su dispositivo se conecte a WIFI_ETECSA y le advertirá si encuentra alguno de los siguientes problemas:
     </p>
 
-    <h2>Tipos de advertencias</h2>
+    <ul id="alerts">
+        <li><a href="#alert-1">Nombre de Wi-Fi similar</a></li>
+        <li><a href="#alert-2">Certificado no válido</a></li>
+        <li><a href="#alert-3">AP no oficial</a></li>
+        <li><a href="#alert-4">No se puede verificar el certificado</a></li>
+        <li><a href="#alert-5">Advertencia en el traceo de rutas</a></li>
+    </ul>
 
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <div class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    <h3>
-                        Nombre de wifi similar
-                    </h3>
-                </div>
-            </div>
+    <p><strong>Conectarse a una red que levante alguna de estas alertas puede ser peligroso para su saldo y es aconsejable desconectarse de inmediato.</strong></p>
 
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    Esta advertencia significa que se ha conectado a un AP que no es WIFI_ETECSA pero que tiene
-                    un nombre muy similar.
-                </div>
+    <h2>Contribuir</h2>
+
+    <p>
+        Esta aplicación es creada como código abierto por y para la Comunidad Android de Cuba
+        con el objetivo de que todos los usuarios de la red WIFI_ETECSA podamos
+        contribuir a mejorarla y poder conectarnos a la red de la forma más segura posible:
+    </p>
+
+    <ul class="fa-ul">
+        <li><i class="fa-li fa fa-envelope"></i>Envíenos sugerencias o comentarios a <a href="mailto:info@daxslab.com" target="_blank">info@daxslab.com</a>.</li>
+        <li><i class="fa-li fa fa-github"></i>Contribuya en <a href="https://github.com/daxslab/es_wifi_etecsa" target="_blank">Github</a>.</li>
+        <li><i class="fa-li fa fa-dollar"></i>Las donaciones de saldo (+5352381079) son siempre bien recibidas ;-)</li>
+    </ul>
+
+</div>
+
+<footer class="navbar fixed-bottom navbar-expand navbar-light bg-light">
+    <a class="navbar-brand" href="http://daxslab.com" target="_blank"><img style="width:100px" src='images/daxslab.png'/></a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a href="tel:+5358074332" class='navbar-link'>
+                <i class="fa fa-fw fa-phone"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="sms:+5358074332?body=¿Es WIFI_ETECSA? App" class='navbar-link'>
+                <i class="fa fa-fw fa-comment"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="mailto:info@daxslab.com?subject=¿Es WIFI_ETECSA? App" class='navbar-link'>
+                <i class="fa fa-fw fa-envelope"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="https://github.com/daxslab/es_wifi_etecsa" target="_blank" class='navbar-link'>
+                <i class="fa fa-fw fa-github"></i>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <div class="mb-0" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <h3 data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Certificado no válido
-                    </h3>
-                </div>
+            <div class="modal-body">
             </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                    Esta advertencia significa que el portal cautivo de Nauta tiene un certificado inválido en esta red.
-                    Ello puede significar un intento de ataque MiM (Hombre en el medio) mediante el cual alguien
-                    intenta tener acceso a su información privada (nombres de usuario, contraseñas, etc...)
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <div class="mb-0" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <h3>
-                        AP no oficial
-                    </h3>
-                </div>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                    Esta advertencia significa que el punto de acceso (AP) al que está conectado pudiera no ser un
-                    AP oficial de ETECSA. Al conectarse a un AP no oficial pudiera estar compartiendo su
-                    conexión a internet con terceros, además de correr el riesgo de ser expulsado de dicha
-                    conexión mientras otras personas continúan utilizando su cuenta.
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingFour">
-                <div class="mb-0" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    <h3>
-                        No se puede verificar el certificado
-                    </h3>
-                </div>
-            </div>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                <div class="card-body">
-                    Esta advertencia indica que ha sido imposible establecer una conexión para comprobar si
-                    el certificado del portal cautivo es válido. Esto puede significar que se ha conectado a una
-                    red que intenta suplantar a WIFI_ETECSA. Al conectarse a esta red pudiera estar en riesgo de
-                    ser víctima de un ataque MitM o podría estar compartiendo su conexión a internet con terceros,
-                    además de correr el riesgo de ser expulsado de dicha conexión mientras otras personas
-                    continúan utilizando su cuenta. Esta advertencia también puede dispararse si existen
-                    problemas de conexión o mucha lentitud en la red.
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingFive">
-                <div class="mb-0" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    <h3>
-                        Advertencia en el traceo de rutas
-                    </h3>
-                </div>
-            </div>
-            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                <div class="card-body">
-                    Esta advertencia indica que se han encontrado saltos inesperados a la hora de realizar un
-                    traceo de rutas. Esto puede significar que se ha conectado a una red que intenta suplantar
-                    a WIFI_ETECSA. Al conectarse a esta red pudiera estar en riesgo de ser victima de un ataque
-                    MitM o podria estar compartiendo su conexión a internet con terceros, además de correr el
-                    riesgo de ser expulsado de dicha conexión mientras otras personas continúan utilizando su cuenta.
-                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
 
-<footer class="navbar fixed-bottom navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="http://daxslab.com"><img style="width:100px" src='images/daxslab.png'/></a>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a href="tel:+5358074332" class='navbar-link'><i class="fa fa-phone fa-fw"></i></a>
-            </li>
-             <li class="nav-item">
-                 <a href="sms:+5358074332?body=Es Wifi ETECSA App" class='navbar-link'><i class="fa fa-comment fa-fw"></i></a>
-            </li>
-            <li class="nav-item">
-                <a href="mailto:info@daxslab.com?subject=Es Wifi ETECSA App" class='navbar-link'><i
-                        class="fa fa-envelope fa-fw"></i></a>
-            </li>
-            <li class="nav-item">
-                <a href="https://github.com/daxslab/es_wifi_etecsa" class='navbar-link'><i
-                        class="fa fa-github fa-fw"></i></a>
-            </li>
-
-        </ul>
-    </div>
-</footer>
-
 <script src='js/jquery.js' type='text/javascript'></script>
 <script src='js/bootstrap.bundle.min.js' type='text/javascript'></script>
+<script>
+    $(function(){
+
+        $('#alerts > li > a').click(function(e){
+
+            let alert_id = $(this).attr('href');
+            let text = $(alert_id).html();
+
+            let $modal_title = $('#info-modal .modal-title');
+            let $modal_body = $('#info-modal .modal-body');
+
+            $modal_title.text($(this).text());
+            $modal_body.html(text);
+
+            $('#info-modal').modal('show');
+
+        });
+
+    });
+</script>
+
+<script id="alert-1" type="text/html">
+    <p>Se ha conectado a un AP que no es WIFI_ETECSA pero que se creado con un
+        nombre muy similar, casi siempre con <strong>intenciones engañosas</strong>.</p>
+</script>
+
+<script id="alert-2" type="text/html">
+    <p>El portal cautivo de Nauta tiene un certificado inválido en esta red.
+        Ello puede significar un intento de ataque <abbr title="Hombre en el medio">MiM</abbr> mediante el cual
+        <strong>alguien
+            intenta tener acceso a su información privada</strong> (nombres de usuario, contraseñas, etc...)</p>
+</script>
+
+<script id="alert-3" type="text/html">
+    <p>El punto de acceso (AP) al que está conectado pudiera no ser un
+        AP oficial de ETECSA. Al conectarse a un AP no oficial pudiera estar compartiendo su
+        conexión a internet con terceros, además de correr el <strong>riesgo de ser expulsado de dicha
+            conexión</strong> mientras otras personas continúan utilizando su cuenta.</p>
+</script>
+
+<script id="alert-4" type="text/html">
+    <p>Ha sido imposible establecer una conexión para comprobar si
+        el certificado del portal cautivo es válido. Esto puede significar que se ha conectado a una
+        red que intenta suplantar a WIFI_ETECSA. Al conectarse a esta red pudiera estar en riesgo de
+        ser víctima de un ataque <abbr title="Hombre en el medio">MiM</abbr> o podría estar compartiendo
+        su conexión a internet con terceros, además de correr el riesgo de ser expulsado de dicha conexión
+        mientras otras personas continúan utilizando su cuenta. Esta advertencia también puede dispararse si existen
+        problemas de conexión o mucha lentitud en la red.</p>
+</script>
+
+<script id="alert-5" type="text/html">
+    <p>Se han encontrado saltos inesperados a la hora de realizar un
+        traceo de rutas. Esto puede significar que se ha conectado a una red que intenta suplantar
+        a WIFI_ETECSA. Al conectarse a esta red pudiera estar en riesgo de ser victima de un ataque
+        <abbr title="Hombre en el medio">MiM</abbr> o podria estar compartiendo su conexión a internet con terceros,
+        además de correr el
+        riesgo de ser expulsado de dicha conexión mientras otras personas continúan utilizando su cuenta.</p>
+</script>
 
 </body>
 </html>
