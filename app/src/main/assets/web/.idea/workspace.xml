@@ -11,37 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="103" column="6" lean-forward="true" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="font-awesome.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/font-awesome.min.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10356">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#69635#69835#2" expanded="true" />
-                <element signature="e#70196#70345#2" expanded="true" />
-                <element signature="e#71008#71157#2" expanded="true" />
-                <element signature="e#71473#71636#1" expanded="true" />
-                <element signature="e#87058#87301#2" expanded="true" />
-                <element signature="e#88160#88410#2" expanded="true" />
-                <element signature="e#118532#118722#2" expanded="true" />
-                <element signature="e#118768#118958#2" expanded="true" />
-                <element signature="e#190922#191197#2" expanded="true" />
-                <element signature="e#191681#191956#2" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="15" column="85" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -63,8 +37,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -138,12 +112,12 @@
       <workItem from="1541439792772" duration="734000" />
       <workItem from="1541517925694" duration="8119000" />
       <workItem from="1541530796219" duration="740000" />
-      <workItem from="1541562102048" duration="1036000" />
+      <workItem from="1541562102048" duration="1254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10629000" />
+    <option name="totallyTimeSpent" value="10847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1370" height="755" extended-state="6" />
@@ -212,16 +186,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="103" column="6" lean-forward="true" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/font-awesome.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10356">
@@ -238,6 +202,16 @@
             <element signature="e#190922#191197#2" expanded="true" />
             <element signature="e#191681#191956#2" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="85" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
         </state>
       </provider>
     </entry>
