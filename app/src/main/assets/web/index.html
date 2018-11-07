@@ -33,12 +33,12 @@
         automáticamente cuando su dispositivo se conecte a WIFI_ETECSA y le advertirá si encuentra alguno de los siguientes problemas:
     </p>
 
-    <ul id="alerts">
-        <li><a href="#alert-1">Nombre de Wi-Fi similar</a></li>
-        <li><a href="#alert-2">Certificado no válido</a></li>
-        <li><a href="#alert-3">AP no oficial</a></li>
-        <li><a href="#alert-4">No se puede verificar el certificado</a></li>
-        <li><a href="#alert-5">Advertencia en el traceo de rutas</a></li>
+    <ul id="alerts" class="list-group mb-2">
+        <li class="list-group-item list-group-item-action"><a href="#alert-1">Nombre de Wi-Fi similar</a></li>
+        <li class="list-group-item list-group-item-action"><a href="#alert-2">Certificado no válido</a></li>
+        <li class="list-group-item list-group-item-action"><a href="#alert-3">AP no oficial</a></li>
+        <li class="list-group-item list-group-item-action"><a href="#alert-4">No se puede verificar el certificado</a></li>
+        <li class="list-group-item list-group-item-action"><a href="#alert-5">Advertencia en el traceo de rutas</a></li>
     </ul>
 
     <p><strong>Conectarse a una red que levante alguna de estas alertas puede ser peligroso para su saldo y es aconsejable desconectarse de inmediato.</strong></p>
@@ -108,15 +108,17 @@
 <script>
     $(function(){
 
-        $('#alerts > li > a').click(function(e){
+        $('#alerts > li').click(function(e){
 
-            let alert_id = $(this).attr('href');
+            let $link = $(this).children('a');
+
+            let alert_id = $link.attr('href');
             let text = $(alert_id).html();
 
             let $modal_title = $('#info-modal .modal-title');
             let $modal_body = $('#info-modal .modal-body');
 
-            $modal_title.text($(this).text());
+            $modal_title.text($link.text());
             $modal_body.html(text);
 
             $('#info-modal').modal('show');
