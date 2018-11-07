@@ -106,6 +106,12 @@
 <script src='js/jquery.js' type='text/javascript'></script>
 <script src='js/bootstrap.bundle.min.js' type='text/javascript'></script>
 <script>
+
+    function showDialog(){
+        let selector = 'a[href={href}]'.replace('{href}', document.location.hash);
+        $(selector).click();
+    }
+
     $(function(){
 
         $('#alerts > li').click(function(e){
@@ -126,9 +132,12 @@
         });
 
         if(document.location.hash !== ''){
-            let selector = 'a[href={href}]'.replace('{href}', document.location.hash);
-            $(selector).click();
+            showDialog();
         }
+
+        $(window).bind( 'hashchange', function(e) {
+            showDialog();
+        });
 
     });
 </script>

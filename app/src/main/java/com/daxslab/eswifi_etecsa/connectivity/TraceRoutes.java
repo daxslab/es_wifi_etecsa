@@ -75,7 +75,7 @@ class TraceRoutes extends AsyncTask<String, Void, Void> {
             int knownJumps = TraceRouteUtils.countKnownjumps(TraceRouteUtils.getJumps(pieces, 4));
 
             if (knownJumps > 1) {
-                NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiver.TRACEROUTE_WARNING_NOTIFICATION_ID, this.mContext.getString(R.string.traceroute_warning), this.mContext.getResources().getQuantityString(R.plurals.unexpexted_route_jumps, knownJumps - 1, knownJumps - 1));
+                NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiver.TRACEROUTE_WARNING_NOTIFICATION_ID, this.mContext.getString(R.string.traceroute_warning), this.mContext.getResources().getQuantityString(R.plurals.unexpexted_route_jumps, knownJumps - 1, knownJumps - 1), "#alert-5");
             }
         }
     return null;
