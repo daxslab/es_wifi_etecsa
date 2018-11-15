@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">¿Es WIFI_ETECSA? (alpha)</string>
+    <string name="app_name">¿Es WIFI_ETECSA? (beta)</string>
     <string name="Warning">Advertencia</string>
     <string name="cant_verify_ssl">No se puede verificar si existe un certificado SSL válido</string>
     <string name="cant_verify_ssl_warning">No se puede verificar el certificado</string>

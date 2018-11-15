@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">¿Es WIFI_ETECSA? (alpha)</string>
+    <string name="app_name">¿Es WIFI_ETECSA? (beta)</string>
     <string name="Warning">Warning</string>
     <string name="cant_verify_ssl">Can\'t verify if network has a valid ssl certificate</string>
     <string name="not_valid_ssl">The SSL certificate for WIFI_ETECSA is not valid</string>
