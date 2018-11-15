@@ -60,9 +60,10 @@ public class WifiReceiver extends BroadcastReceiver {
     }
 
     /**
-     * Check if current wifi connection has a WIFI_ETECSA similar SSID and launch a system
-     * notification if positive.
+     * Check if current wifi connection has a SSID similar to "WIFI_ETECSA" using the Jaro-Winkler
+     * distance algorithm, and launch a system notification in case it does.
      * @param context
+     * @see <a href="https://en.wikipedia.org/wiki/Jaro–Winkler_distance" target="_top">Jaro–Winkler_distance</a>
      */
     public void checkSimilarWifiName(Context context) {
         String ssid = WifiUtils.getCurrentSSID(context);
@@ -75,7 +76,7 @@ public class WifiReceiver extends BroadcastReceiver {
         JaroWinkler jw = new JaroWinkler();
 
         if (!isWifiEtecsaSSID(context) && jw.similarity(ssid, origin) >= 0.88){
-            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiReceiver.SIMILAR_WIFI_NAME_WARNING_NOTIFICATION_ID, context.getString(R.string.similar_wifi_name_warning), context.getString(R.string.similar_wifi_name));
+            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiReceiver.SIMILAR_WIFI_NAME_WARNING_NOTIFICATION_ID, context.getString(R.string.similar_wifi_name_warning), context.getString(R.string.similar_wifi_name),"#alert-1");
 
         }
     }
@@ -87,7 +88,7 @@ public class WifiReceiver extends BroadcastReceiver {
      */
     public void checkApAddress(Context context) {
         if (!MacUtils.isHuaweiAddress(WifiUtils.getCurrentBSSID(context))) {
-            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiReceiver.NO_OFFICIAL_AP_WARNING_NOTIFICATION_ID, context.getString(R.string.not_official_ap_warning), context.getString(R.string.not_connected_official_ap));
+            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiReceiver.NO_OFFICIAL_AP_WARNING_NOTIFICATION_ID, context.getString(R.string.not_official_ap_warning), context.getString(R.string.not_connected_official_ap), "#alert-3");
         }
     }
 

@@ -23,8 +23,7 @@ public class NotificationUtils {
      * @param contentTitle Notification title
      * @param contentText Notification id
      */
-    public static void createNotification(Context mContext, String channelId, String channelTitle, int notificationId, String contentTitle, String contentText) {
-        Intent intent;
+    public static void createNotification(Context mContext, String channelId, String channelTitle, int notificationId, String contentTitle, String contentText, String activityMessage) {
         NotificationCompat.Builder builder;
         NotificationManager notifManager = (NotificationManager)mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -36,18 +35,19 @@ public class NotificationUtils {
                 mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
                 notifManager.createNotificationChannel(mChannel);
             }
-            builder = getBuilder(mContext, channelId, contentTitle, contentText);
+            builder = getBuilder(mContext, channelId, contentTitle, contentText, activityMessage);
         }
         else {
-            builder = getBuilder(mContext, channelId, contentTitle, contentText);
+            builder = getBuilder(mContext, channelId, contentTitle, contentText, activityMessage);
         }
         Notification notification = builder.build();
         notifManager.notify(notificationId, notification);
     }
 
-    private static NotificationCompat.Builder getBuilder(Context mContext, String channelId, CharSequence contentTitle, CharSequence contentText){
+    private static NotificationCompat.Builder getBuilder(Context mContext, String channelId, CharSequence contentTitle, CharSequence contentText, String activityMessage){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(mContext, channelId);
         Intent intent = new Intent(mContext, MainActivity.class);
+        intent.putExtra(MainActivity.ACTIVITY_MESSAGE, activityMessage);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
         builder.setContentTitle(contentTitle)

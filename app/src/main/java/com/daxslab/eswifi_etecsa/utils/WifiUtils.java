@@ -19,7 +19,7 @@ public class WifiUtils {
 
     /**
      * @param context
-     * @return BSSID of of current connected AP
+     * @return BSSID of current connected AP
      */
     public static String getCurrentBSSID(Context context){
         WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
@@ -29,7 +29,7 @@ public class WifiUtils {
 
     /**
      * @param context
-     * @return SSID of of current connected AP
+     * @return SSID of current connected AP
      */
     public static String getCurrentSSID(Context context){
         WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
