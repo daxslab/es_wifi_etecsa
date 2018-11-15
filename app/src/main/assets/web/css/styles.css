@@ -12,3 +12,7 @@ header.jumbotron{
 .navbar-link{
     margin: 0 .25em;
 }
+
+body.modal-open {
+    overflow: auto;
+}
