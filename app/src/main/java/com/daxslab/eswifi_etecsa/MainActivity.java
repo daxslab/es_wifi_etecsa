@@ -46,26 +46,26 @@ public class MainActivity extends AppCompatActivity {
             runPermissionDialogs();
         }
 
-        startService();
+        startService(this);
 
     }
 
-    public void startService() {
+    public static void startService(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            createNotificationChannel(NOTIFICATION_CHANNEL_ID, NOTIFICATION_CHANNEL_NAME);
+            createNotificationChannel(context, NOTIFICATION_CHANNEL_ID, NOTIFICATION_CHANNEL_NAME);
         }
-        Intent serviceIntent = new Intent(this, AppForegroundService.class);
-        ContextCompat.startForegroundService(this, serviceIntent);
+        Intent serviceIntent = new Intent(context, AppForegroundService.class);
+        ContextCompat.startForegroundService(context, serviceIntent);
 
     }
 
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private void createNotificationChannel(String channelId, String channelName) {
+    public static void createNotificationChannel(Context context, String channelId, String channelName) {
         NotificationChannel chan = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_LOW);
         chan.setLightColor(Color.BLUE);
         chan.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         assert manager != null;
         manager.createNotificationChannel(chan);
     }
