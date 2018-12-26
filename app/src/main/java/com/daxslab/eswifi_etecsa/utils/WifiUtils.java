@@ -2,9 +2,11 @@ package com.daxslab.eswifi_etecsa.utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.util.Log;
 
 public class WifiUtils {
 
@@ -15,6 +17,34 @@ public class WifiUtils {
     public static boolean isReceiverWifiConnected(Intent intent){
         NetworkInfo info = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
         return  info != null && info.isConnected();
+    }
+
+    /**
+     * @param context app context
+     * @return true if wifi is enabled
+     */
+    public static boolean isWifiEnabled(Context context){
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+
+        if (wifiNetwork != null && wifiNetwork.isConnected()) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @param cm Connectivity manager
+     * @return true if wifi is enabled
+     */
+    public static boolean isWifiEnabled(ConnectivityManager cm){
+        NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+
+        if (wifiNetwork != null && wifiNetwork.isConnected()) {
+            return true;
+        }
+        return false;
     }
 
     /**

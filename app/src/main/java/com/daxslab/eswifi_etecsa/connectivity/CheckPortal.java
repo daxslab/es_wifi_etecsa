@@ -37,10 +37,10 @@ class CheckPortal extends AsyncTask<String, Void, Boolean> {
         try {
             isConnectionOk = checkConnection(params[0]);
         }catch (SSLHandshakeException ex){
-            NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiver.SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.ssl_warning), mContext.getString(R.string.not_valid_ssl), "#alert-2");
+            NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiverActions.SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.ssl_warning), mContext.getString(R.string.not_valid_ssl), "#alert-2");
             this.isWifiOk = false;
         }catch (Exception ex){
-            NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiver.CANT_VERIFY_SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.cant_verify_ssl_warning), mContext.getString(R.string.cant_verify_ssl), "#alert-4");
+            NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiverActions.CANT_VERIFY_SSL_WARNING_NOTIFICATION_ID, mContext.getString(R.string.cant_verify_ssl_warning), mContext.getString(R.string.cant_verify_ssl), "#alert-4");
             this.isWifiOk = false;
         }
 
@@ -53,8 +53,8 @@ class CheckPortal extends AsyncTask<String, Void, Boolean> {
      * @throws InterruptedException
      * @throws IOException
      */
-    private boolean checkConnection(String checkUrl) throws InterruptedException, IOException {
-        HttpURLConnection response = null;
+    private boolean checkConnection(String checkUrl) throws IOException {
+        HttpURLConnection response;
             URL url = new URL(checkUrl);
             response = (HttpURLConnection) url.openConnection();
             response.setRequestMethod("GET");

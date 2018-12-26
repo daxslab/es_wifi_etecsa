@@ -38,7 +38,7 @@ class TraceRoutes extends AsyncTask<String, Void, Void> {
     protected Void doInBackground(String... params) {
 
         try {
-            InetAddress.getByName(WifiReceiver.CAPTIVE_PORTAL_ADDRESS);
+            InetAddress.getByName(WifiReceiverActions.CAPTIVE_PORTAL_ADDRESS);
         } catch (UnknownHostException e) {
             // do not attempt traceroute if can't reach captive portal address
             return null;
@@ -47,7 +47,7 @@ class TraceRoutes extends AsyncTask<String, Void, Void> {
         final ArrayList<TraceRoute.Result> l = new ArrayList<>();
         final CountDownLatch c = new CountDownLatch(1);
 
-        Task trace = TraceRoute.start(WifiReceiver.CAPTIVE_PORTAL_ADDRESS, new Output() {
+        Task trace = TraceRoute.start(WifiReceiverActions.CAPTIVE_PORTAL_ADDRESS, new Output() {
             @Override
             public void write(String s) {
             }
@@ -75,7 +75,7 @@ class TraceRoutes extends AsyncTask<String, Void, Void> {
             int knownJumps = TraceRouteUtils.countKnownjumps(TraceRouteUtils.getJumps(pieces, 4));
 
             if (knownJumps > 1) {
-                NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiver.TRACEROUTE_WARNING_NOTIFICATION_ID, this.mContext.getString(R.string.traceroute_warning), this.mContext.getResources().getQuantityString(R.plurals.unexpexted_route_jumps, knownJumps - 1, knownJumps - 1), "#alert-5");
+                NotificationUtils.createNotification(this.mContext, this.mContext.getString(R.string.app_name), this.mContext.getString(R.string.app_name), WifiReceiverActions.TRACEROUTE_WARNING_NOTIFICATION_ID, this.mContext.getString(R.string.traceroute_warning), this.mContext.getResources().getQuantityString(R.plurals.unexpexted_route_jumps, knownJumps - 1, knownJumps - 1), "#alert-5");
             }
         }
     return null;

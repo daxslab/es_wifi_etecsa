@@ -11,6 +11,10 @@
     <string name="similar_wifi_name_warning">Nombre de Wifi similar</string>
     <string name="similar_wifi_name">Usted no está conectado a WIFI_ETECSA, sino a un AP con un nombre muy similar</string>
     <string name="traceroute_warning">Advertencia en el traceo de rutas</string>
+    <string name="permission_required">Permiso necesario</string>
+    <string name="location_permission_required_description">El permiso de ubicación es requerido ya que android lo solicita en sus versiones más recientes para poder acceder al SSID de la red WiFi.</string>
+    <string name="service_notification_description">Comprobando sus conecciones WIFI.</string>
+    <string name="service_notification_title">Securidad Activa</string>
     <plurals name="unexpexted_route_jumps">
         <item quantity="one">Se ha encontrado %d salto inesperado en la ruta</item>
         <item quantity="other">Se han encontrado %d saltos inesperados en la ruta</item>
