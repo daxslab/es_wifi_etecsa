@@ -3,11 +3,9 @@ package com.daxslab.eswifi_etecsa;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.ConnectivityManager;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -15,10 +13,8 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Process;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.daxslab.eswifi_etecsa.connectivity.WifiReceiverActions;
+import com.daxslab.eswifi_etecsa.connectivity.WifiActions;
 
 public class AppForegroundService extends Service implements WifiConnectionReceiver.ConnectivityReceiverListener {
 
@@ -100,8 +96,8 @@ public class AppForegroundService extends Service implements WifiConnectionRecei
     @Override
     public void onNetworkConnectionChanged(Context context, Intent intent, boolean isConnected) {
         if (isConnected){
-            WifiReceiverActions receiverActions = new WifiReceiverActions();
-            receiverActions.onReceive(context, intent);
+            WifiActions receiverActions = new WifiActions();
+            receiverActions.runChecks(context, intent);
         }
     }
 

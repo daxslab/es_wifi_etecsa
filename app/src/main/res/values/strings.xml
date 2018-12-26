@@ -14,6 +14,7 @@
     <string name="location_permission_required_description">The location permission is required since android requests it in its most recent versions in order to access the WiFi network SSID.</string>
     <string name="service_notification_description">Checking your WIFI connections.</string>
     <string name="service_notification_title">Active Security</string>
+    <string name="run_checks">Run security checks</string>
     <plurals name="unexpexted_route_jumps">
         <item quantity="one">%d unexpexted route jump detected</item>
         <item quantity="other">%d unexpexted route jumps detected</item>

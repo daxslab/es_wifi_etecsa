@@ -17,8 +17,13 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+
+import com.daxslab.eswifi_etecsa.connectivity.WifiActions;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -103,6 +108,23 @@ public class MainActivity extends AppCompatActivity {
             message = "";
         }
         webview.loadUrl(webUrl+message);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.run_checks:
+                WifiActions receiverActions = new WifiActions();
+                receiverActions.runChecks(this, getIntent());
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

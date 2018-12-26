@@ -15,6 +15,7 @@
     <string name="location_permission_required_description">El permiso de ubicación es requerido ya que android lo solicita en sus versiones más recientes para poder acceder al SSID de la red WiFi.</string>
     <string name="service_notification_description">Comprobando sus conecciones WIFI.</string>
     <string name="service_notification_title">Securidad Activa</string>
+    <string name="run_checks">Run security checks</string>
     <plurals name="unexpexted_route_jumps">
         <item quantity="one">Se ha encontrado %d salto inesperado en la ruta</item>
         <item quantity="other">Se han encontrado %d saltos inesperados en la ruta</item>

@@ -2,6 +2,7 @@ package com.daxslab.eswifi_etecsa.connectivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.daxslab.eswifi_etecsa.R;
 import com.daxslab.eswifi_etecsa.utils.MacUtils;
@@ -18,7 +19,7 @@ import info.debatty.java.stringsimilarity.JaroWinkler;
  * Broadcast receiver listening for wifi connections. Should start wifi checks
  */
 
-public class WifiReceiverActions {
+public class WifiActions {
 
     public static final int SSL_WARNING_NOTIFICATION_ID = 8111;
     public static final int CANT_VERIFY_SSL_WARNING_NOTIFICATION_ID = 8112;
@@ -30,8 +31,8 @@ public class WifiReceiverActions {
     public static final String CAPTIVE_PORTAL_URL = "https://"+CAPTIVE_PORTAL_ADDRESS+":8443/";
 
 
-    public void onReceive(Context context, Intent intent) {
-        if (WifiUtils.isReceiverWifiConnected(intent)) {
+    public void runChecks(Context context, Intent intent) {
+        if (WifiUtils.isWifiEnabled(context)) {
             checkSimilarWifiName(context);
             if (isWifiEtecsaSSID(context)) {
                 new TraceRoutes(context).execute();
@@ -47,7 +48,7 @@ public class WifiReceiverActions {
      * @return true if current wifi connection has WIFI_ETECSA SSID
      */
     private boolean isWifiEtecsaSSID(Context context){
-        return Objects.equals(WifiReceiverActions.WIFI_ETECSA_SSID, WifiUtils.getCurrentSSID(context));
+        return Objects.equals(WifiActions.WIFI_ETECSA_SSID, WifiUtils.getCurrentSSID(context));
     }
 
     /**
@@ -62,12 +63,12 @@ public class WifiReceiverActions {
         ssid = StringTrimmer.trim(ssid, " ");
         ssid = ssid.toLowerCase();
 
-        String origin = WifiReceiverActions.WIFI_ETECSA_SSID.toLowerCase();
+        String origin = WifiActions.WIFI_ETECSA_SSID.toLowerCase();
 
         JaroWinkler jw = new JaroWinkler();
 
         if (!isWifiEtecsaSSID(context) && jw.similarity(ssid, origin) >= 0.88){
-            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiReceiverActions.SIMILAR_WIFI_NAME_WARNING_NOTIFICATION_ID, context.getString(R.string.similar_wifi_name_warning), context.getString(R.string.similar_wifi_name),"#alert-1");
+            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiActions.SIMILAR_WIFI_NAME_WARNING_NOTIFICATION_ID, context.getString(R.string.similar_wifi_name_warning), context.getString(R.string.similar_wifi_name),"#alert-1");
 
         }
     }
@@ -79,7 +80,7 @@ public class WifiReceiverActions {
      */
     public void checkApAddress(Context context) {
         if (!MacUtils.isHuaweiAddress(WifiUtils.getCurrentBSSID(context))) {
-            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiReceiverActions.NO_OFFICIAL_AP_WARNING_NOTIFICATION_ID, context.getString(R.string.not_official_ap_warning), context.getString(R.string.not_connected_official_ap), "#alert-3");
+            NotificationUtils.createNotification(context,context.getString(R.string.app_name), context.getString(R.string.app_name), WifiActions.NO_OFFICIAL_AP_WARNING_NOTIFICATION_ID, context.getString(R.string.not_official_ap_warning), context.getString(R.string.not_connected_official_ap), "#alert-3");
         }
     }
 
