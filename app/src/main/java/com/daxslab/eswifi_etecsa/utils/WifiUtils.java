@@ -16,7 +16,6 @@ public class WifiUtils {
      */
     public static boolean isReceiverWifiConnected(Intent intent){
         NetworkInfo info = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
-        Log.d("akak", "isReceiverWifiConnected: "+info.toString());
         return  info != null && info.isConnected();
     }
 
